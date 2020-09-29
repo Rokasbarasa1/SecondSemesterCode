@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.chat.ChatController">
+   <children>
+      <Label fx:id="firendName" layoutX="26.0" layoutY="54.0" text="Chatting with:" />
+      <Button layoutX="33.0" layoutY="351.0" mnemonicParsing="false" onAction="#openLogin" text="Relog" />
+      <TextField fx:id="yourMessage" alignment="TOP_LEFT" layoutX="33.0" layoutY="271.0" prefHeight="55.0" prefWidth="279.0" />
+      <Button layoutX="312.0" layoutY="271.0" mnemonicParsing="false" onAction="#sendText" prefHeight="55.0" prefWidth="47.0" text="Send" />
+      <TextArea fx:id="chatField" layoutX="33.0" layoutY="78.0" prefHeight="193.0" prefWidth="325.0" />
+      <ListView fx:id="onlineUsers" layoutX="381.0" layoutY="78.0" prefHeight="200.0" prefWidth="123.0" />
+      <Button layoutX="414.0" layoutY="286.0" mnemonicParsing="false" onAction="#changeChat" text="Change" />
+   </children>
+</AnchorPane>

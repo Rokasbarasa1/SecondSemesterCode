@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="418.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.AddFormationController">
+   <children>
+      <Text layoutX="85.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYER LIST">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="425.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FORMATION">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TableView fx:id="allPlayers" layoutX="22.0" layoutY="63.0" prefHeight="264.0" prefWidth="287.0">
+        <columns>
+          <TableColumn fx:id="namePerson" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="positionPerson" prefWidth="75.0" text="Position" />
+          <TableColumn fx:id="numberPerson" prefWidth="75.0" text="Number" />
+            <TableColumn fx:id="availabilityPerson" prefWidth="75.0" text="Availability" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label layoutX="377.0" layoutY="55.0" text="Name:" />
+      <TextField fx:id="formationName" layoutX="412.0" layoutY="51.0" prefHeight="25.0" prefWidth="90.0" />
+      <ComboBox fx:id="formationsSelector" layoutX="508.0" layoutY="51.0" prefHeight="25.0" prefWidth="106.0" />
+      <Button layoutX="22.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleNewPlayer" text="New Player" />
+      <Button layoutX="123.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleDeletePlayer" text="Delete Player" />
+      <Button layoutX="237.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleEditPlayer" text="Edit Player" />
+      <Button layoutX="22.0" layoutY="371.0" mnemonicParsing="false" onAction="#handleGoBack" text="back" />
+      <Button layoutX="374.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleNewFormation" text="New formation" />
+      <Button layoutX="555.0" layoutY="327.0" mnemonicParsing="false" onAction="#handleDeleteFormation" text="Delete formation" />
+      <Button layoutX="620.0" layoutY="371.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+      <TableView fx:id="formationPlayers" layoutX="374.0" layoutY="85.0" prefHeight="243.0" prefWidth="287.0">
+         <columns>
+            <TableColumn fx:id="formationNamePerson" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="formationPositionPerson" prefWidth="75.0" text="Position" />
+            <TableColumn fx:id="formationNumberPerson" prefWidth="75.0" text="Number" />
+            <TableColumn fx:id="fortmationAvailabilityPerson" prefWidth="75.0" text="Availability" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button layoutX="617.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleLoadFormation" text="LOAD" />
+      <Button layoutX="317.0" layoutY="183.0" mnemonicParsing="false" onAction="#AddPlayerToFormation" text="Add -&gt;" />
+      <Button layoutX="317.0" layoutY="220.0" mnemonicParsing="false" onAction="#RemovePlayerFromFromation" prefHeight="25.0" prefWidth="55.0" text="&lt;- Del" />
+   </children>
+</AnchorPane>

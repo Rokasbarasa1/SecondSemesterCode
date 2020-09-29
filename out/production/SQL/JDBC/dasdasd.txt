@@ -1,0 +1,77 @@
+import java.sql.*;
+public class KingdomMain {
+    private Connection c;
+    private Statement st;
+    private static KingdomMain instance;
+    private KingdomMain() {
+        c = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+
+            c = DriverManager
+                    .getConnection("jdbc:postgresql://localhost:5432/postgres",
+                            "postgres", "****");
+        }
+        catch (SQLException | ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    private static final String CREATE_TABLE_SQL="CREATE TABLE Equipment ("
+            + "type,"
+            + "id,"
+            +");";
+    public static KingdomMain getInstance()
+    {
+        if(instance == null)
+            instance = new KingdomMain();
+        return instance;
+    }
+
+    public void insert(String tableName, String values) throws SQLException
+    {
+        String com = "insert into \"Equipment\"." + tableName + " values ( " + values + ");";
+        st = c.createStatement();
+        st.executeUpdate(com);
+    }
+    public void remove(String tableName, String condition)
+    {
+        String com = "delete from \"Equipment\"." + tableName + " where " + condition + ";";
+        try {
+            st = c.createStatement();
+            st.executeUpdate(com);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void removeAll(String tableName)
+    {
+        String com = "delete from \"Equipment\"." + tableName + ";";
+        try {
+            st = c.createStatement();
+            st.executeUpdate(com);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public ResultSet get(String tableName, String condition)
+    {
+        ResultSet rs = null;
+        String com;
+        if(condition != null)
+            com = "select * from \"Equipment\"." + tableName + " where " + condition + ";";
+        else
+            com = "select * from \"Equipment\"." + tableName + ";";
+        try {
+            st = c.createStatement();
+            rs = st.executeQuery(com);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rs;
+    }
+    public ResultSet get(String tableName)
+    {
+        return get(tableName, null);
+    }
+}

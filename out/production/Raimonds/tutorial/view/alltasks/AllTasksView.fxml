@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="tutorial.view.alltasks.AllTasksController">
+   <children>
+      <Pane prefHeight="351.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="tableView" layoutX="21.0" layoutY="18.0" prefHeight="298.0" prefWidth="518.0">
+              <columns>
+                <TableColumn fx:id="creatorColumn" editable="false" prefWidth="107.33333778381348" text="Creator" />
+                <TableColumn fx:id="descColumn" editable="false" prefWidth="286.66664123535156" text="Description" />
+                  <TableColumn fx:id="dateColumn" prefWidth="122.66665649414062" text="Date" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane prefHeight="65.0" prefWidth="600.0">
+         <children>
+            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#onAddButton" text="Add" />
+            <Button layoutX="65.0" layoutY="15.0" mnemonicParsing="false" onAction="#onNextTaskButton" text="Next Task" />
+         </children>
+      </Pane>
+   </children>
+</VBox>

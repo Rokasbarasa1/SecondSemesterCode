@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="268.0" prefWidth="317.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.AddMatchController">
+   <children>
+      <Label layoutX="11.0" layoutY="48.0" text="Opponent" />
+      <Label layoutX="14.0" layoutY="79.0" text="Location" />
+      <Label layoutX="24.0" layoutY="114.0" text="Date" />
+      <Label layoutX="24.0" layoutY="141.0" text="Type" />
+      <Label layoutX="9.0" layoutY="170.0" text="Formation" />
+      <TextField fx:id="OpponentAddM" layoutX="73.0" layoutY="44.0" />
+      <TextField fx:id="LocationAddM" layoutX="73.0" layoutY="75.0" />
+      <Label layoutX="72.0" layoutY="114.0" text="Day:" />
+      <TextField fx:id="DateAddM" layoutX="106.0" layoutY="110.0" prefHeight="25.0" prefWidth="28.0" />
+      <Label layoutX="140.0" layoutY="114.0" text="Month:" />
+      <TextField fx:id="MonthAddM" layoutX="176.0" layoutY="110.0" prefHeight="25.0" prefWidth="28.0" />
+      <Label layoutX="214.0" layoutY="114.0" text="Year:" />
+      <TextField fx:id="YearAddM" layoutX="250.0" layoutY="110.0" prefHeight="25.0" prefWidth="55.0" />
+      <RadioButton fx:id="FriendlyMatch" layoutX="63.0" layoutY="141.0" mnemonicParsing="false" text="Friendly">
+         <toggleGroup>
+            <ToggleGroup fx:id="TYpeOfMatch" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="LeagueMatch" layoutX="197.0" layoutY="141.0" mnemonicParsing="false" text="League" toggleGroup="$TYpeOfMatch" />
+      <RadioButton fx:id="CupMatch" layoutX="138.0" layoutY="141.0" mnemonicParsing="false" text="Cup" toggleGroup="$TYpeOfMatch" />
+      <ComboBox fx:id="BoxOfFormations" layoutX="72.0" layoutY="166.0" prefWidth="150.0" />
+      <Text layoutX="125.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATCH">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Button layoutX="258.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleOk" text="Save" />
+      <Button fx:id="toMainPage" layoutX="11.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleCancel" text="Back" />
+   </children>
+</AnchorPane>

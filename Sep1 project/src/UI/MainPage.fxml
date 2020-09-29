@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="566.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.MatchController">
+   <children>
+      <Text layoutX="258.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="104.576171875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <TableView fx:id="matchTable" layoutX="15.0" layoutY="82.0" prefHeight="257.0" prefWidth="558.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="82.0">
+        <columns>
+          <TableColumn fx:id="matchAgainst" prefWidth="96.0" text="Playing against" />
+          <TableColumn fx:id="matchType" prefWidth="81.0" text="Match Type" />
+            <TableColumn fx:id="matchDate" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="matchLocation" prefWidth="96.0" text="Location" />
+            <TableColumn fx:id="matchFormation" prefWidth="77.0" text="Formation" />
+            <TableColumn fx:id="matchPassed" prefWidth="132.0" text="Passed Match" />
+        </columns>
+      </TableView>
+      <Button layoutX="22.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleNewMatch" text="Add match" />
+      <Button layoutX="105.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleDeleteMatch" text="Delete match" />
+      <Button layoutX="201.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleEditMatch" text="Edit match" />
+      <Button layoutX="441.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleGoToFormations" text="Formatins - Players" />
+   </children>
+</AnchorPane>
